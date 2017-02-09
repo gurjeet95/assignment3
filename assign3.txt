@@ -1,0 +1,30 @@
+A closure is an inner function that has an access to outer function variables.
+The main idea behind closure is that it removes the limit that variables of 
+outer function are available while the function is executing. In other words,by
+the help of closure,we can even access the variables after the function, 
+in which they are declared is executed.Closure usually stores the environment
+in which they are created,so they have access to local and global variables
+that are in scope at that time.
+
+Example
+function outer(num)
+{
+var num1=num
+	return function(num2)
+	{
+       return num1*num2
+	}
+}
+var multi1=outer(5)
+console.log(multi1(5))
+
+
+In this example,multi1 creates a reference to instance of inner function,when outer() function is executed.
+The instance of inner function maintains a reference to environment,within which variable 'num1' exits.For this reason,
+'num1' is available for use,when the multi1() is executed and returns a value of num1*num2.
+
+Resources
+http://www.w3schools.com/js/js_function_closures.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+http://javascriptissexy.com/understand-javascript-closures-with-ease/
+
